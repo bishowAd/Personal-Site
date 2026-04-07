@@ -55,5 +55,7 @@ function initAll() {
 }
 
 /* ── Bootstrap ─────────────────────────────── */
-renderAll();
-initAll();
+document.addEventListener('DOMContentLoaded', () => {
+  renderAll();
+  initAll();
+});
