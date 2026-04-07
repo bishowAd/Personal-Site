@@ -1,0 +1,119 @@
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --color-hero-bg:   #0d0b1e;
+  --color-accent:    #6366f1;
+  --color-accent-lt: #818cf8;
+  --color-purple:    #a78bfa;
+  --radius-card:     1rem;
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ============================================================
+   GRADIENT TEXT
+   ============================================================ */
+.gradient-text {
+  background: linear-gradient(120deg, var(--color-accent-lt) 0%, var(--color-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   TYPEWRITER CURSOR
+   ============================================================ */
+.cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--color-accent-lt);
+  margin-left: 1px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.07);
+}
+/* Flip link colors when nav is scrolled over light background */
+#navbar.scrolled .nav-link       { color: #374151 !important; }
+#navbar.scrolled .nav-link:hover { color: var(--color-accent) !important; }
+#navbar.scrolled .logo-name      { color: #111827 !important; }
+#navbar.scrolled .logo-dot       { color: var(--color-accent) !important; }
+
+/* ============================================================
+   MOBILE NAV DRAWER
+   ============================================================ */
+#mobileNav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+#mobileNav.open { max-height: 400px; }
+
+/* ============================================================
+   HERO BACKGROUND
+   ============================================================ */
+.hero-bg {
+  background-color: var(--color-hero-bg);
+}
+.hero-glow {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(99, 102, 241, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 75% 65%, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+}
+.contact-glow {
+  background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+}
+
+/* ============================================================
+   PHOTO RING
+   ============================================================ */
+.photo-ring {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-purple), #f472b6);
+  padding: 3px;
+  border-radius: 9999px;
+}
+
+/* ============================================================
+   PROJECT CARD HEADER GRADIENTS
+   ============================================================ */
+.ph-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
+.ph-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.ph-3 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+
+/* ============================================================
+   SECTION LABEL
+   ============================================================ */
+.section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.6rem;
+}
